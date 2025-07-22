@@ -1,15 +1,18 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./features/dashboard/Dashboard"
+import Layout from "./layout/Layout"
+import TrackerPage from "./features/tracker/TrackerPage";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <button className="btn btn-neutral">Neutral</button>
-    </>
-  )
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/tracker" element={<TrackerPage />} />
+          {/* Add more routes: tracker, planner, resources */}
+        </Routes>
+      </Layout>
+    </Router>
+  );
 }
-
-export default App
