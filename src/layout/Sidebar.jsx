@@ -9,7 +9,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="bg-blue-50 w-60 h-screen p-5 shadow-md">
+    <aside className="bg-gray-100 w-60 h-screen p-5 mont-font shadow-md">
       <div className="font-bold text-xl mb-6">Menu</div>
       <ul className="space-y-3">
         {navItems.map((item) => (
@@ -17,8 +17,8 @@ export default function Sidebar() {
             <NavLink
               to={item.path}
               className={({ isActive }) =>
-                `block px-3 py-2 rounded hover:bg-blue-200 ${
-                  isActive ? "bg-blue-300 font-semibold" : ""
+                `block px-3 py-2 rounded hover:bg-[#22201F]/90 hover:text-white ${
+                  isActive ? "bg-[#22201F] text-white font-semibold" : "text-black"
                 }`
               }
             >

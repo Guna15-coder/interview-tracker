@@ -33,31 +33,31 @@ export default function TrackerPage() {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4">📘 DSA Topic Tracker</h2>
+    <div className="p-6 min-h-screen text-white">
+      <h2 className="text-3xl font-bold mb-6 text-[#E8FD59]">
+        📘 DSA Topic Tracker
+      </h2>
 
       {data.map((category, catIdx) => (
-        <div key={category.category} className="mb-8">
-          <h3 className="text-xl font-bold text-blue-600 mb-3">
+        <div key={category.category} className="mb-10">
+          <h3 className="text-2xl font-semibold mb-4 text-[#E8FD59]">
             {category.category}
           </h3>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             {category.topics.map((topic, topicIdx) => (
               <div
                 key={topic.name}
-                className="bg-white p-4 shadow rounded flex justify-between items-center"
+                className="bg-[#2B2927] p-4 rounded-lg shadow-md flex justify-between items-center"
               >
-                <span className="text-gray-800 font-medium">
-                  {topic.name}
-                </span>
+                <span className="text-lg">{topic.name}</span>
 
                 <select
                   value={topic.status}
                   onChange={(e) =>
                     handleStatusChange(catIdx, topicIdx, e.target.value)
                   }
-                  className="px-2 py-1 border rounded text-sm"
+                  className="bg-[#E8FD59] text-black text-sm font-semibold px-3 py-1 rounded-md shadow focus:outline-none"
                 >
                   <option value="not-started">Not Started</option>
                   <option value="in-progress">In Progress</option>
